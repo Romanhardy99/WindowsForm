@@ -33,6 +33,7 @@
             this.checkBoxShowDate = new System.Windows.Forms.CheckBox();
             this.checkBoxShowWeekDay = new System.Windows.Forms.CheckBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.buttonHideControls = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelTime
@@ -72,14 +73,30 @@
             this.timer.Enabled = true;
             this.timer.Tick += new System.EventHandler(this.timer_Tick);
             // 
+            // buttonHideControls
+            // 
+            this.buttonHideControls.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.buttonHideControls.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.buttonHideControls.Location = new System.Drawing.Point(21, 256);
+            this.buttonHideControls.Name = "buttonHideControls";
+            this.buttonHideControls.Size = new System.Drawing.Size(309, 74);
+            this.buttonHideControls.TabIndex = 3;
+            this.buttonHideControls.Text = "Hide controls";
+            this.buttonHideControls.UseVisualStyleBackColor = false;
+            this.buttonHideControls.Click += new System.EventHandler(this.buttonHideControls_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(338, 259);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.BackgroundImage = global::Clock.Properties.Resources.abstract_grunge_texture_splash_paint_black_and_purple_background_vector;
+            this.ClientSize = new System.Drawing.Size(342, 371);
+            this.Controls.Add(this.buttonHideControls);
             this.Controls.Add(this.checkBoxShowWeekDay);
             this.Controls.Add(this.checkBoxShowDate);
             this.Controls.Add(this.labelTime);
+            this.ForeColor = System.Drawing.SystemColors.Menu;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -95,6 +112,7 @@
         private System.Windows.Forms.CheckBox checkBoxShowDate;
         private System.Windows.Forms.CheckBox checkBoxShowWeekDay;
         private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Button buttonHideControls;
     }
 }
 
