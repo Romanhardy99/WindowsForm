@@ -62,5 +62,10 @@ namespace Clock
         {
             SetVisibility(true);
         }
+
+        private void contextMenuStrip_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
     }
 }

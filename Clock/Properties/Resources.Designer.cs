@@ -93,6 +93,16 @@ namespace Clock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap s_l400 {
+            get {
+                object obj = ResourceManager.GetObject("s-l400", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap textura {
             get {
                 object obj = ResourceManager.GetObject("textura", resourceCulture);
