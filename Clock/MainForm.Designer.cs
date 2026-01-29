@@ -29,11 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.labelTime = new System.Windows.Forms.Label();
             this.checkBoxShowDate = new System.Windows.Forms.CheckBox();
             this.checkBoxShowWeekDay = new System.Windows.Forms.CheckBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.buttonHideControls = new System.Windows.Forms.Button();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.SuspendLayout();
             // 
             // labelTime
@@ -86,6 +88,12 @@
             this.buttonHideControls.UseVisualStyleBackColor = false;
             this.buttonHideControls.Click += new System.EventHandler(this.buttonHideControls_Click);
             // 
+            // notifyIcon
+            // 
+            this.notifyIcon.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon.Icon")));
+            this.notifyIcon.Text = "ClockPV_522";
+            this.notifyIcon.Visible = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,6 +108,7 @@
             this.DoubleBuffered = true;
             this.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Clock";
@@ -116,6 +125,7 @@
         private System.Windows.Forms.CheckBox checkBoxShowWeekDay;
         private System.Windows.Forms.Timer timer;
         private System.Windows.Forms.Button buttonHideControls;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
     }
 }
 
