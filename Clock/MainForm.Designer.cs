@@ -45,6 +45,7 @@
             this.labelTime.Size = new System.Drawing.Size(261, 51);
             this.labelTime.TabIndex = 0;
             this.labelTime.Text = "CurrentTime";
+            this.labelTime.DoubleClick += new System.EventHandler(this.labelTime_DoubleClick);
             // 
             // checkBoxShowDate
             // 
@@ -90,17 +91,19 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.BackgroundImage = global::Clock.Properties.Resources.abstract_grunge_texture_splash_paint_black_and_purple_background_vector;
+            this.BackgroundImage = global::Clock.Properties.Resources.data_1;
             this.ClientSize = new System.Drawing.Size(342, 371);
             this.Controls.Add(this.buttonHideControls);
             this.Controls.Add(this.checkBoxShowWeekDay);
             this.Controls.Add(this.checkBoxShowDate);
             this.Controls.Add(this.labelTime);
-            this.ForeColor = System.Drawing.SystemColors.Menu;
+            this.DoubleBuffered = true;
+            this.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Clock";
+            this.DoubleClick += new System.EventHandler(this.MainForm_DoubleClick);
             this.ResumeLayout(false);
             this.PerformLayout();
 

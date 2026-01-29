@@ -63,6 +63,16 @@ namespace Clock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _51783ee43de4498fc452cc869de0a00a {
+            get {
+                object obj = ResourceManager.GetObject("51783ee43de4498fc452cc869de0a00a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap abstract_grunge_texture_splash_paint_black_and_purple_background_vector {
             get {
                 object obj = ResourceManager.GetObject("abstract-grunge-texture-splash-paint-black-and-purple-background-vector", resourceCulture);
@@ -73,9 +83,29 @@ namespace Clock.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap data_1 {
+            get {
+                object obj = ResourceManager.GetObject("data-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap textura {
             get {
                 object obj = ResourceManager.GetObject("textura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thumb {
+            get {
+                object obj = ResourceManager.GetObject("thumb", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
