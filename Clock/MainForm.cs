@@ -19,25 +19,37 @@ namespace Clock
                 (
                     Screen.PrimaryScreen.Bounds.Width - this.Width - 50, 50
                 );
+
+            tsmiTopmost.Click += tsmiTopmost_Click;
+            tsmiShowDate.Click += tsmiShowDate_Click;
+            tsmiShowWeekday.Click += tsmiShowWeekday_Click;
+
+            notifyIcon.MouseDoubleClick += contextMenuStrip_MouseDoubleClick;
+
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
+            UpdateTimeLabel();
+        }
+
+        private void UpdateTimeLabel()
+        {
             labelTime.Text = DateTime.Now.ToString(
-                "hh:mm.ss tt",
-                System.Globalization.CultureInfo.InvariantCulture
-                );
-            if (checkBoxShowDate.Checked) 
+                           "hh:mm.ss tt",
+                           System.Globalization.CultureInfo.InvariantCulture
+                           );
+            if (checkBoxShowDate.Checked)
             {
-               labelTime.Text += $"\n{DateTime.Now.ToString("yyyy.MM.dd")}";
+                labelTime.Text += $"\n{DateTime.Now.ToString("yyyy.MM.dd")}";
             }
             if (checkBoxShowWeekDay.Checked)
             {
                 labelTime.Text += $"\n{DateTime.Now.DayOfWeek}";
             }
             notifyIcon.Text = labelTime.Text;
-
         }
+
         void SetVisibility(bool visible)
         {
             checkBoxShowDate.Visible = visible; //делает checkBoxShowDate невидимым
@@ -66,6 +78,39 @@ namespace Clock
         private void contextMenuStrip_Opening(object sender, CancelEventArgs e)
         {
 
+        }
+
+        private void tsmiTopmost_Click(object sender, EventArgs e)
+        {
+            tsmiTopmost.Checked = !tsmiTopmost.Checked;
+            this.TopMost = tsmiTopmost.Checked;
+        }
+
+        private void contextMenuStrip_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            this.Show();
+            this.TopMost = true;
+            this.BringToFront();
+            this.Activate();
+        }
+
+        private void tsmiShowDate_Click(object sender, EventArgs e)
+        {
+            tsmiShowDate.Checked = !tsmiShowDate.Checked;
+            checkBoxShowDate.Checked = tsmiShowDate.Checked;
+            UpdateTimeLabel();
+        }
+
+        private void tsmiShowWeekday_Click(object sender, EventArgs e)
+        {
+            tsmiShowWeekday.Checked = !tsmiShowWeekday.Checked;
+            checkBoxShowWeekDay.Checked = tsmiShowWeekday.Checked;
+            UpdateTimeLabel();
+        }
+
+        private void tsmiExit_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
