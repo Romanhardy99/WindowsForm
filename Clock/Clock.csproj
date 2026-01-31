@@ -81,37 +81,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\textura.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\abstract-grunge-texture-splash-paint-black-and-purple-background-vector.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\51783ee43de4498fc452cc869de0a00a.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\thumb.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\data-1.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\s-l400.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logoPRIME.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\buttonPRIME.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\hide.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logoPRIME1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logoPRIME11.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logoPRIME111.png" />
