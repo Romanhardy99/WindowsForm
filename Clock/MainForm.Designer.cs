@@ -59,10 +59,10 @@
             // labelTime
             // 
             this.labelTime.AutoSize = true;
-            this.labelTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.labelTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.labelTime.ContextMenuStrip = this.contextMenuStrip;
             this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
-            this.labelTime.Location = new System.Drawing.Point(12, 9);
+            this.labelTime.Location = new System.Drawing.Point(23, 102);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(261, 51);
             this.labelTime.TabIndex = 0;
@@ -192,9 +192,9 @@
             // checkBoxShowDate
             // 
             this.checkBoxShowDate.AutoSize = true;
-            this.checkBoxShowDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.checkBoxShowDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.checkBoxShowDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.checkBoxShowDate.Location = new System.Drawing.Point(21, 184);
+            this.checkBoxShowDate.Location = new System.Drawing.Point(21, 313);
             this.checkBoxShowDate.Name = "checkBoxShowDate";
             this.checkBoxShowDate.Size = new System.Drawing.Size(132, 30);
             this.checkBoxShowDate.TabIndex = 1;
@@ -204,9 +204,9 @@
             // checkBoxShowWeekDay
             // 
             this.checkBoxShowWeekDay.AutoSize = true;
-            this.checkBoxShowWeekDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.checkBoxShowWeekDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.checkBoxShowWeekDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.checkBoxShowWeekDay.Location = new System.Drawing.Point(21, 220);
+            this.checkBoxShowWeekDay.Location = new System.Drawing.Point(21, 349);
             this.checkBoxShowWeekDay.Name = "checkBoxShowWeekDay";
             this.checkBoxShowWeekDay.Size = new System.Drawing.Size(181, 30);
             this.checkBoxShowWeekDay.TabIndex = 2;
@@ -221,12 +221,12 @@
             // buttonHideControls
             // 
             this.buttonHideControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.buttonHideControls.BackgroundImage = global::Clock.Properties.Resources.hide;
             this.buttonHideControls.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.buttonHideControls.Location = new System.Drawing.Point(21, 256);
+            this.buttonHideControls.Location = new System.Drawing.Point(21, 398);
             this.buttonHideControls.Name = "buttonHideControls";
             this.buttonHideControls.Size = new System.Drawing.Size(309, 74);
             this.buttonHideControls.TabIndex = 3;
-            this.buttonHideControls.Text = "Hide controls";
             this.buttonHideControls.UseVisualStyleBackColor = false;
             this.buttonHideControls.Click += new System.EventHandler(this.buttonHideControls_Click);
             // 
@@ -242,8 +242,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.BackgroundImage = global::Clock.Properties.Resources.s_l400;
-            this.ClientSize = new System.Drawing.Size(342, 371);
+            this.BackgroundImage = global::Clock.Properties.Resources.logoPRIME111;
+            this.ClientSize = new System.Drawing.Size(345, 484);
             this.Controls.Add(this.buttonHideControls);
             this.Controls.Add(this.checkBoxShowWeekDay);
             this.Controls.Add(this.checkBoxShowDate);

@@ -98,5 +98,23 @@
   <ItemGroup>
     <None Include="Resources\s-l400.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoPRIME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\buttonPRIME.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hide.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoPRIME1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoPRIME11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoPRIME111.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
