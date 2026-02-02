@@ -39,6 +39,10 @@
             this.tsmiShowWeekday = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsmiFont = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiTechnicallyInsaneWidesemibold = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiOrecrusherexpandital = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiYawTaht = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiMontrocital = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiColor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiForegroundColor = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiBackgroundColor = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,16 +57,18 @@
             this.timer = new System.Windows.Forms.Timer(this.components);
             this.buttonHideControls = new System.Windows.Forms.Button();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.labelControls = new System.Windows.Forms.Label();
             this.contextMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // labelTime
             // 
             this.labelTime.AutoSize = true;
-            this.labelTime.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.labelTime.BackColor = System.Drawing.Color.Black;
             this.labelTime.ContextMenuStrip = this.contextMenuStrip;
             this.labelTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
-            this.labelTime.Location = new System.Drawing.Point(23, 102);
+            this.labelTime.ForeColor = System.Drawing.Color.Red;
+            this.labelTime.Location = new System.Drawing.Point(12, 9);
             this.labelTime.Name = "labelTime";
             this.labelTime.Size = new System.Drawing.Size(261, 51);
             this.labelTime.TabIndex = 0;
@@ -133,9 +139,42 @@
             // 
             // tsmiFont
             // 
+            this.tsmiFont.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiTechnicallyInsaneWidesemibold,
+            this.tsmiOrecrusherexpandital,
+            this.tsmiYawTaht,
+            this.tsmiMontrocital});
             this.tsmiFont.Name = "tsmiFont";
             this.tsmiFont.Size = new System.Drawing.Size(180, 22);
             this.tsmiFont.Text = "Font";
+            // 
+            // tsmiTechnicallyInsaneWidesemibold
+            // 
+            this.tsmiTechnicallyInsaneWidesemibold.Name = "tsmiTechnicallyInsaneWidesemibold";
+            this.tsmiTechnicallyInsaneWidesemibold.Size = new System.Drawing.Size(243, 22);
+            this.tsmiTechnicallyInsaneWidesemibold.Text = "TechnicallyInsaneWidesemibold";
+            this.tsmiTechnicallyInsaneWidesemibold.Click += new System.EventHandler(this.tsmiTechnicallyInsaneWidesemibold_Click);
+            // 
+            // tsmiOrecrusherexpandital
+            // 
+            this.tsmiOrecrusherexpandital.Name = "tsmiOrecrusherexpandital";
+            this.tsmiOrecrusherexpandital.Size = new System.Drawing.Size(243, 22);
+            this.tsmiOrecrusherexpandital.Text = "Orecrusherexpandital";
+            this.tsmiOrecrusherexpandital.Click += new System.EventHandler(this.tsmiOrecrusherexpandital_Click);
+            // 
+            // tsmiYawTaht
+            // 
+            this.tsmiYawTaht.Name = "tsmiYawTaht";
+            this.tsmiYawTaht.Size = new System.Drawing.Size(243, 22);
+            this.tsmiYawTaht.Text = "YawTaht";
+            this.tsmiYawTaht.Click += new System.EventHandler(this.tsmiYawTaht_Click);
+            // 
+            // tsmiMontrocital
+            // 
+            this.tsmiMontrocital.Name = "tsmiMontrocital";
+            this.tsmiMontrocital.Size = new System.Drawing.Size(243, 22);
+            this.tsmiMontrocital.Text = "Montrocital";
+            this.tsmiMontrocital.Click += new System.EventHandler(this.tsmiMontrocital_Click);
             // 
             // tsmiColor
             // 
@@ -149,14 +188,14 @@
             // tsmiForegroundColor
             // 
             this.tsmiForegroundColor.Name = "tsmiForegroundColor";
-            this.tsmiForegroundColor.Size = new System.Drawing.Size(180, 22);
+            this.tsmiForegroundColor.Size = new System.Drawing.Size(168, 22);
             this.tsmiForegroundColor.Text = "Foreground color";
             this.tsmiForegroundColor.Click += new System.EventHandler(this.tsmiForegroundColor_Click);
             // 
             // tsmiBackgroundColor
             // 
             this.tsmiBackgroundColor.Name = "tsmiBackgroundColor";
-            this.tsmiBackgroundColor.Size = new System.Drawing.Size(180, 22);
+            this.tsmiBackgroundColor.Size = new System.Drawing.Size(168, 22);
             this.tsmiBackgroundColor.Text = "Background color";
             this.tsmiBackgroundColor.Click += new System.EventHandler(this.tsmiBackgroundColor_Click);
             // 
@@ -198,9 +237,10 @@
             // checkBoxShowDate
             // 
             this.checkBoxShowDate.AutoSize = true;
-            this.checkBoxShowDate.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.checkBoxShowDate.BackColor = System.Drawing.Color.Black;
             this.checkBoxShowDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.checkBoxShowDate.Location = new System.Drawing.Point(21, 313);
+            this.checkBoxShowDate.ForeColor = System.Drawing.Color.Red;
+            this.checkBoxShowDate.Location = new System.Drawing.Point(21, 198);
             this.checkBoxShowDate.Name = "checkBoxShowDate";
             this.checkBoxShowDate.Size = new System.Drawing.Size(132, 30);
             this.checkBoxShowDate.TabIndex = 1;
@@ -211,9 +251,10 @@
             // checkBoxShowWeekDay
             // 
             this.checkBoxShowWeekDay.AutoSize = true;
-            this.checkBoxShowWeekDay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.checkBoxShowWeekDay.BackColor = System.Drawing.Color.Black;
             this.checkBoxShowWeekDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.checkBoxShowWeekDay.Location = new System.Drawing.Point(21, 349);
+            this.checkBoxShowWeekDay.ForeColor = System.Drawing.Color.Red;
+            this.checkBoxShowWeekDay.Location = new System.Drawing.Point(21, 234);
             this.checkBoxShowWeekDay.Name = "checkBoxShowWeekDay";
             this.checkBoxShowWeekDay.Size = new System.Drawing.Size(181, 30);
             this.checkBoxShowWeekDay.TabIndex = 2;
@@ -228,10 +269,10 @@
             // 
             // buttonHideControls
             // 
-            this.buttonHideControls.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.buttonHideControls.BackgroundImage = global::Clock.Properties.Resources.hide;
+            this.buttonHideControls.BackColor = System.Drawing.Color.Black;
             this.buttonHideControls.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.buttonHideControls.Location = new System.Drawing.Point(21, 398);
+            this.buttonHideControls.ForeColor = System.Drawing.Color.LimeGreen;
+            this.buttonHideControls.Location = new System.Drawing.Point(12, 279);
             this.buttonHideControls.Name = "buttonHideControls";
             this.buttonHideControls.Size = new System.Drawing.Size(309, 74);
             this.buttonHideControls.TabIndex = 3;
@@ -246,19 +287,32 @@
             this.notifyIcon.Visible = true;
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
+            // labelControls
+            // 
+            this.labelControls.AutoSize = true;
+            this.labelControls.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
+            this.labelControls.Location = new System.Drawing.Point(25, 293);
+            this.labelControls.Name = "labelControls";
+            this.labelControls.Size = new System.Drawing.Size(283, 51);
+            this.labelControls.TabIndex = 4;
+            this.labelControls.Text = "Hide Controls";
+            this.labelControls.Click += new System.EventHandler(this.labelControls_Click);
+            this.labelControls.DoubleClick += new System.EventHandler(this.labelControls_DoubleClick);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.BackgroundImage = global::Clock.Properties.Resources.logoPRIME111;
-            this.ClientSize = new System.Drawing.Size(345, 484);
+            this.BackColor = System.Drawing.Color.Black;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(336, 365);
+            this.Controls.Add(this.labelControls);
             this.Controls.Add(this.buttonHideControls);
             this.Controls.Add(this.checkBoxShowWeekDay);
             this.Controls.Add(this.checkBoxShowDate);
             this.Controls.Add(this.labelTime);
             this.DoubleBuffered = true;
-            this.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.ForeColor = System.Drawing.Color.Lime;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -297,6 +351,11 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiAutorun;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripMenuItem tsmiExit;
+        private System.Windows.Forms.Label labelControls;
+        private System.Windows.Forms.ToolStripMenuItem tsmiTechnicallyInsaneWidesemibold;
+        private System.Windows.Forms.ToolStripMenuItem tsmiOrecrusherexpandital;
+        private System.Windows.Forms.ToolStripMenuItem tsmiYawTaht;
+        private System.Windows.Forms.ToolStripMenuItem tsmiMontrocital;
     }
 }
 
