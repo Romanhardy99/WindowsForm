@@ -14,7 +14,7 @@ namespace Clock
     {
         ColorDialog backgroundDialog;
         ColorDialog foregroundDialog;
-   
+        FontDialog fontDialog;
         public MainForm()
         {
             InitializeComponent();
@@ -26,6 +26,7 @@ namespace Clock
       
             backgroundDialog = new ColorDialog();
             foregroundDialog = new ColorDialog();
+            fontDialog = new FontDialog(this);
         }
      
         private void timer_Tick(object sender, EventArgs e)
@@ -103,6 +104,11 @@ namespace Clock
             {
                 labelTime.ForeColor = foregroundDialog.Color;
             }
+        }
+
+        private void tsmiFont_Click(object sender, EventArgs e)
+        {
+            fontDialog.ShowDialog();
         }
     }
 }
