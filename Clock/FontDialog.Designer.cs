@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FontDialog));
             this.comboBoxFonts = new System.Windows.Forms.ComboBox();
             this.numericUpDownFontSize = new System.Windows.Forms.NumericUpDown();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelExample = new System.Windows.Forms.Label();
             this.buttonOK = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFontSize)).BeginInit();
@@ -45,6 +45,7 @@
             this.comboBoxFonts.Name = "comboBoxFonts";
             this.comboBoxFonts.Size = new System.Drawing.Size(512, 21);
             this.comboBoxFonts.TabIndex = 0;
+            this.comboBoxFonts.SelectedIndexChanged += new System.EventHandler(this.comboBoxFonts_SelectedIndexChanged);
             // 
             // numericUpDownFontSize
             // 
@@ -67,16 +68,17 @@
             0,
             0,
             0});
+            this.numericUpDownFontSize.ValueChanged += new System.EventHandler(this.numericUpDownFontSize_ValueChanged);
             // 
-            // label1
+            // labelExample
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
-            this.label1.Location = new System.Drawing.Point(13, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(191, 51);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Example";
+            this.labelExample.AutoSize = true;
+            this.labelExample.Font = new System.Drawing.Font("Microsoft Sans Serif", 32F);
+            this.labelExample.Location = new System.Drawing.Point(13, 51);
+            this.labelExample.Name = "labelExample";
+            this.labelExample.Size = new System.Drawing.Size(191, 51);
+            this.labelExample.TabIndex = 2;
+            this.labelExample.Text = "Example";
             // 
             // buttonOK
             // 
@@ -87,6 +89,7 @@
             this.buttonOK.TabIndex = 3;
             this.buttonOK.Text = "OK";
             this.buttonOK.UseVisualStyleBackColor = true;
+            this.buttonOK.Click += new System.EventHandler(this.buttonOK_Click);
             // 
             // buttonCancel
             // 
@@ -105,7 +108,7 @@
             this.ClientSize = new System.Drawing.Size(646, 237);
             this.Controls.Add(this.buttonCancel);
             this.Controls.Add(this.buttonOK);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelExample);
             this.Controls.Add(this.numericUpDownFontSize);
             this.Controls.Add(this.comboBoxFonts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -126,7 +129,7 @@
 
         private System.Windows.Forms.ComboBox comboBoxFonts;
         private System.Windows.Forms.NumericUpDown numericUpDownFontSize;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelExample;
         private System.Windows.Forms.Button buttonOK;
         private System.Windows.Forms.Button buttonCancel;
     }
