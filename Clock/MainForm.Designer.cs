@@ -87,7 +87,7 @@
             this.toolStripSeparator5,
             this.tsmiExit});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            this.contextMenuStrip.Size = new System.Drawing.Size(181, 254);
+            this.contextMenuStrip.Size = new System.Drawing.Size(153, 232);
             // 
             // tsmiTopmost
             // 
@@ -183,6 +183,7 @@
             this.tsmiAutorun.Name = "tsmiAutorun";
             this.tsmiAutorun.Size = new System.Drawing.Size(180, 22);
             this.tsmiAutorun.Text = "Autorun";
+            this.tsmiAutorun.CheckedChanged += new System.EventHandler(this.tsmiAutorun_CheckedChanged);
             // 
             // toolStripSeparator5
             // 
@@ -251,8 +252,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.BackgroundImage = global::Clock.Properties.Resources.logoPRIME111;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(345, 484);
             this.Controls.Add(this.buttonHideControls);
             this.Controls.Add(this.checkBoxShowWeekDay);
