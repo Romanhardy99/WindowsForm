@@ -19,12 +19,23 @@ namespace Clock
         PrivateFontCollection pfc;
         MainForm parent;
         Dictionary <string, string> fonts;
+        float fontSize;
         public Font Font { get; private set; }
         public string FontFile { get; set;  }
-        public FontDialog(MainForm parent)
+        public float FontSize 
+        {
+            get => fontSize;
+            set => numericUpDownFontSize.Value = (decimal)(fontSize = 
+                value < (float)numericUpDownFontSize.Minimum ? (float)numericUpDownFontSize.Minimum :
+                 value > (float)numericUpDownFontSize.Maximum ? (float)numericUpDownFontSize.Maximum :
+                 value);
+        }
+        public FontDialog(MainForm parent, string fontFile)
         {
             InitializeComponent();
             pfc = null;
+            fonts = new Dictionary<string, string>();
+            this.FontFile = FontFile;
             this.StartPosition = FormStartPosition.Manual;
             this.parent = parent;
             fonts = new Dictionary<string, string> ();
@@ -36,7 +47,7 @@ namespace Clock
         //  ".." - ссылка на родительский каталог
         void LoadFonts()
         {
-            AllocConsole();
+            //AllocConsole();
             Console.WriteLine($"{Application.ExecutablePath}");
             //Directory.SetCurrentDirectory($"{Application.ExecutablePath}");
             Directory.SetCurrentDirectory($"{Application.ExecutablePath}\\..\\..\\..\\Fonts");
@@ -46,6 +57,8 @@ namespace Clock
             //LoadFonts(Directory.GetCurrentDirectory(), "*.otf");
             Traverse(Directory.GetCurrentDirectory());
             comboBoxFonts.Items.AddRange(fonts.Keys.ToArray());
+            //comboBoxFonts.SelectedIndex = 0;
+            comboBoxFonts.SelectedItem = this.FontFile.Split('\\').Last();
         }
         void LoadFonts(string path, string extension)
         {
@@ -90,6 +103,7 @@ namespace Clock
         {
             this.Font = labelExample.Font;
             this.FontFile = fonts[comboBoxFonts.SelectedItem.ToString()];
+            this.FontSize = (float)numericUpDownFontSize.Value;
         }
         public Font ApplyFontExample(string filename)
         {
