@@ -26,7 +26,7 @@ namespace Clock
                     Screen.PrimaryScreen.Bounds.Width - this.Width - 50, 50
                 );
             tsmiShowControls.Checked = true;
-      
+
             backgroundDialog = new ColorDialog();
             foregroundDialog = new ColorDialog();
             fontDialog = new FontDialog(this, "");
@@ -37,6 +37,7 @@ namespace Clock
             Directory.SetCurrentDirectory($"{Application.ExecutablePath}\\..\\..\\..");
             string filename = "Settings.ini";
             StreamWriter writer = new StreamWriter(filename);
+            writer.WriteLine($"{this.Location.X}x{this.Location.Y}");
             writer.WriteLine(tsmiTopmost.Checked);
             writer.WriteLine(tsmiShowControls.Checked);
             writer.WriteLine(tsmiShowDate.Checked);
@@ -46,8 +47,6 @@ namespace Clock
             writer.WriteLine(labelTime.ForeColor.ToArgb());
             writer.WriteLine(fontDialog.FontFile);
             writer.WriteLine(fontDialog.FontSize);
-
-
             writer.Close();
             Process.Start("notepad", filename);
         }
@@ -58,6 +57,12 @@ namespace Clock
             //try
             {
                 reader = new StreamReader("Settings.ini");
+                string location = reader.ReadLine();
+                this.Location = new Point
+                    (
+                        Convert.ToInt16(location.Split('x').First()),
+                        Convert.ToInt16(location.Split('x').Last())
+                    );
                 tsmiTopmost.Checked = bool.Parse(reader.ReadLine());
                 tsmiShowControls.Checked = bool.Parse(reader.ReadLine());
                 tsmiShowDate.Checked = bool.Parse(reader.ReadLine());
@@ -88,9 +93,9 @@ namespace Clock
                 "hh:mm.ss tt",
                 System.Globalization.CultureInfo.InvariantCulture
                 );
-            if (checkBoxShowDate.Checked) 
+            if (checkBoxShowDate.Checked)
             {
-               labelTime.Text += $"\n{DateTime.Now.ToString("yyyy.MM.dd")}";
+                labelTime.Text += $"\n{DateTime.Now.ToString("yyyy.MM.dd")}";
             }
             if (checkBoxShowWeekDay.Checked)
             {
@@ -107,7 +112,7 @@ namespace Clock
             this.ShowInTaskbar = visible; //Скрываем кнопку приложения в панели задач 
             this.FormBorderStyle = visible ? FormBorderStyle.FixedToolWindow : FormBorderStyle.None; //Полностью убираем границы окна
             this.TransparencyKey = visible ? Color.Empty : this.BackColor; //делаем окно прозрачным
-          
+
             //для того что бы сделать окно прозрачным, его TransparencyKey должен совпадать с BackColor
         }
         private void buttonHideControls_Click(object sender, EventArgs e) => tsmiShowControls.Checked = false;
@@ -126,7 +131,7 @@ namespace Clock
 
         private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            if(!this.TopMost)
+            if (!this.TopMost)
             {
                 this.TopMost = true;
                 this.TopMost = false;
@@ -145,7 +150,7 @@ namespace Clock
         private void tsmiBackgroundColor_Click(object sender, EventArgs e)
         {
             DialogResult result = backgroundDialog.ShowDialog();
-            if(result == DialogResult.OK)
+            if (result == DialogResult.OK)
             {
                 labelTime.BackColor = backgroundDialog.Color;
             }
@@ -161,7 +166,7 @@ namespace Clock
 
         private void tsmiFont_Click(object sender, EventArgs e)
         {
-            if(fontDialog.ShowDialog() == DialogResult.OK)
+            if (fontDialog.ShowDialog() == DialogResult.OK)
             {
                 labelTime.Font = fontDialog.Font;
             }
@@ -172,7 +177,7 @@ namespace Clock
             string key_name = "Clock_PV_522";
             RegistryKey rk = Registry.CurrentUser.
                 OpenSubKey("Software\\Microsoft\\Windows\\CurrentVersion\\Run", true); //true - открыть ветку на запись.
-            if(tsmiAutorun.Checked) rk.SetValue(key_name, Application.ExecutablePath);
+            if (tsmiAutorun.Checked) rk.SetValue(key_name, Application.ExecutablePath);
             else rk.DeleteValue(key_name, false);
             //false - НЕ бросать исключение при отсутсвии удаляемой ветки.
             rk.Dispose();
