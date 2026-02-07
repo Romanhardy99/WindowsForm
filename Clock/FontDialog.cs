@@ -35,7 +35,7 @@ namespace Clock
             InitializeComponent();
             pfc = null;
             fonts = new Dictionary<string, string>();
-            this.FontFile = FontFile;
+            this.FontFile = fontFile;
             this.StartPosition = FormStartPosition.Manual;
             this.parent = parent;
             fonts = new Dictionary<string, string> ();
@@ -57,8 +57,8 @@ namespace Clock
             //LoadFonts(Directory.GetCurrentDirectory(), "*.otf");
             Traverse(Directory.GetCurrentDirectory());
             comboBoxFonts.Items.AddRange(fonts.Keys.ToArray());
-            //comboBoxFonts.SelectedIndex = 0;
-            comboBoxFonts.SelectedItem = this.FontFile.Split('\\').Last();
+            comboBoxFonts.SelectedIndex = 0;
+            if(FontFile != null && FontFile != "")comboBoxFonts.SelectedItem = this.FontFile.Split('\\').Last();
         }
         void LoadFonts(string path, string extension)
         {

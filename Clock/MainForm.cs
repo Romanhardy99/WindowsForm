@@ -29,7 +29,7 @@ namespace Clock
       
             backgroundDialog = new ColorDialog();
             foregroundDialog = new ColorDialog();
-            //fontDialog = new FontDialog(this);
+            fontDialog = new FontDialog(this, "");
             LoadSettings();
         }
         void SaveSettings()
@@ -55,7 +55,7 @@ namespace Clock
         {
             Directory.SetCurrentDirectory($"{Application.ExecutablePath}\\..\\..\\..");
             StreamReader reader = null;
-            try
+            //try
             {
                 reader = new StreamReader("Settings.ini");
                 tsmiTopmost.Checked = bool.Parse(reader.ReadLine());
@@ -72,11 +72,11 @@ namespace Clock
                 labelTime.Font = fontDialog.ApplyFontExample(fontDialog.FontFile);
                 reader.Close();
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show(this, ex.Message);
-            }
-            if(reader != null)
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(this, ex.Message);
+            //}
+            if (reader != null)
             {
                 reader.Close();
             }
