@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
 using Microsoft.Win32;
+using System.Runtime.InteropServices;
 
 namespace Clock
 {
@@ -18,6 +19,8 @@ namespace Clock
         ColorDialog backgroundDialog;
         ColorDialog foregroundDialog;
         FontDialog fontDialog;
+        bool mouseDown = false;
+        Point mouseOffset;
         public MainForm()
         {
             InitializeComponent();
@@ -31,7 +34,12 @@ namespace Clock
             foregroundDialog = new ColorDialog();
             fontDialog = new FontDialog(this, "");
             LoadSettings();
+            AllocConsole();
         }
+        [DllImport("kernel32.dll")]
+        public static extern bool AllocConsole();
+        [DllImport("kernel32.dll")]
+        public static extern bool FreeConsole();
         void SaveSettings()
         {
             Directory.SetCurrentDirectory($"{Application.ExecutablePath}\\..\\..\\..");
@@ -186,6 +194,41 @@ namespace Clock
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             SaveSettings();
+        }
+
+        //private void labelTime_MouseDown(object sender, MouseEventArgs e)
+        //{
+        //    this.Location = new Point(e.X, e.Y);
+        //}
+
+         
+
+       
+        private void labelTime_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (!mouseDown) return;
+
+            Point mousePos = Control.MousePosition;
+
+            this.Location = new Point
+                (
+                    mousePos.X - mouseOffset.X,
+                    mousePos.Y - mouseOffset.Y
+                );
+        }
+
+        private void labelTime_MouseDown(object sender, MouseEventArgs e) 
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                mouseDown = true;
+                mouseOffset = e.Location;
+            }
+        }
+
+        private void labelTime_MouseUp(object sender, MouseEventArgs e)
+        {
+            mouseDown = false;
         }
     }
 }
