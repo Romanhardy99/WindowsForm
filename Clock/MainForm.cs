@@ -201,9 +201,6 @@ namespace Clock
         //    this.Location = new Point(e.X, e.Y);
         //}
 
-         
-
-       
         private void labelTime_MouseMove(object sender, MouseEventArgs e)
         {
             if (!mouseDown) return;
@@ -212,8 +209,8 @@ namespace Clock
 
             this.Location = new Point
                 (
-                    mousePos.X - mouseOffset.X,
-                    mousePos.Y - mouseOffset.Y
+                    mousePos.X - labelTime.Location.X - mouseOffset.X,
+                    mousePos.Y - labelTime.Location.Y - mouseOffset.Y
                 );
         }
 
